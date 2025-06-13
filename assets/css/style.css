@@ -1,20 +1,32 @@
 header{
+    height: 250px;
+    background-color: rgb(106, 125, 233);
+}
+
+#header,
+#highlightCards {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 100px;
-    margin-bottom: 0;
-    background-color: aqua;
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+main{
+    margin-top: -120px;
 }
 
 #new_transacion{
     border: 2px solid #333;
     border-radius: 8px;
     color: #333;
+    font-weight: bold;
+    background-color: rgb(116, 116, 241);
     font-size: 15px;
     margin-bottom: 15px;
     max-width: 140px;
-    padding: 5px;
+    padding: 5px 15px;
     text-decoration: none;
 }
 
@@ -22,7 +34,6 @@ header{
     display: flex;
     align-items: center;
     font-size: 10px;
-    width: 15%;
 }
 
 #logo{
@@ -32,15 +43,29 @@ header{
     border-radius: 50%;
 }
 
+
+
 #highlightCards{
-    border: solid;
+    gap: 20px;
+}
+
+.new_card{
     display: flex;
-    justify-content: center;
-    flex-direction: row;
-    
-    background-color: aqua;
+    justify-content: space-between;
+    font-size: 30px;
+    margin-bottom: 40px;
 }
 
 .cards{
     border: solid;
+    border-bottom: 25%;
+    background-color: aliceblue;
+    border-radius: 8px;
+    padding: 15px;
+    width: 30%;
+}
+
+.amount{
+    font-weight: bold;
+    font-size: 25px;
 }
