@@ -1,0 +1,46 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 100px;
+    margin-bottom: 0;
+    background-color: aqua;
+}
+
+#new_transacion{
+    border: 2px solid #333;
+    border-radius: 8px;
+    color: #333;
+    font-size: 15px;
+    margin-bottom: 15px;
+    max-width: 140px;
+    padding: 5px;
+    text-decoration: none;
+}
+
+#perfil{
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+    width: 15%;
+}
+
+#logo{
+    width: 80px;       
+    height: 80px;     
+    object-fit: cover; 
+    border-radius: 50%;
+}
+
+#highlightCards{
+    border: solid;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    
+    background-color: aqua;
+}
+
+.cards{
+    border: solid;
+}
