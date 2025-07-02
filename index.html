@@ -1,56 +1,76 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>goFinance</title>
-
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/dashboard.css">
 
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/modalStyles.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
-    <header>
-        <div id="header">
-            <div id="perfil">
-                <img id="logo" src="/assets/images/pandinha.jpg" alt="Foto de Perfil">
-                <h1>Olá, Estudante!</h1>
+    <header class="navbar-fundo">
+        <div class="navbar">
+            <div class="navbar-container">
+                <img id="avatar" src="/assets/images/pandinha.jpg" alt="">
+                <div class="navbar-ini">
+                    <p>ola,</p>
+                    <p>estudante!</p>
+                </div>
             </div>
-            <a href="#" id="new_transacion">Nova transação</a>
+            <button id="btn-open-modal">Nova Transação</button>
+        </div>
+        <div id="modal-overlay" class="modal-overlay hidden">
+            <div class="modal-content">
+                <button id="btn-close-modal" class="modal-close">&times;</button>
+                <h2>Cadastrar Transação</h2>
+
+                <form id="form-transacao">
+                    <input type="text" id="input-titulo" name="titulo" placeholder="Título" required />
+                    <input type="number" id="input-preco" name="preco" placeholder="Preço" step="0.01" required />
+
+                    <div class="btn-group">
+                        <button type="button" id="btn-entrada" class="btn-toggle selected">Entrada <i class="fa-regular fa-circle-up"></i></button>
+                        <button type="button" id="btn-saida" class="btn-toggle">Saída <i class="fa-regular fa-circle-down"></i></button>
+                    </div>
+
+                    <input type="text" id="input-categoria" name="categoria" placeholder="Categoria" required />
+                    <button type="submit" class="btn-submit">Cadastrar</button>
+                </form>
+            </div>
         </div>
     </header>
-    <main>
-
-        <div id="highlightCards">
-            <div class="cards">
-                <div class="new_card">
-                    <p class="title">Entrada</p>
-                    <i class="fa-solid fa-circle-up type"></i>
-                </div>
-                <p class="amount">R$ 17.300,00</p>
-                <p class="lastTransaction">Ultima entrada 13 de Maio</p>
-            </div>
-
-            <div class="cards">
-                <div class="new_card">
-                    <p class="title">Entrada</p>
-                    <i class="fa-solid fa-circle-up type"></i>
-                </div>
-                <p class="amount">R$ 17.300,00</p>
-                <p class="lastTransaction">Ultima entrada 13 de Maio</p>
-            </div>
-
-            <div class="cards">
-                <div class="new_card">
-                    <p class="title">Entrada</p>
-                    <i class="fa-solid fa-circle-up type"></i>
-                </div>
-                <p class="amount">R$ 17.300,00</p>
-                <p class="lastTransaction">Ultima entrada 13 de Maio</p>
-            </div>
+    <main id="main-container">
+        <div class="scroll-wrapper">
+            <section class="cards-container"></section>
         </div>
+        
+        <div class="transactions-container">
+            <table class="transactions-table">
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Preço</th>
+                        <th>Categoria</th>
+                        <th>Data</th>
+                    </tr>
+                </thead>
+                <tbody id="transacoes-tbody">
+                   
 
+                </tbody>
+            </table>
+        </div>
     </main>
+    <script src="js/transactionModal.js"></script>
+    <script src="./js/script.js"></script>
 </body>
+
 </html>
